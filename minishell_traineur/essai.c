@@ -44,9 +44,10 @@ int	main(int ac, char **av, char **env)
 	while (av[0] && av[1])
 	{
 		idx = 0;
+		av++; // TODO MISS
 		while (av[idx] && strcmp(av[idx], ";") && strcmp(av[idx], "|"))
 			idx++;
-		if (av[idx] && !strcmp(av[idx], "cd"))
+		if (av[0] && !strcmp(av[0], "cd"))
 		{
 			if (idx != 2)
 				my_stderr("error: cd: bad arguments", NULL);
